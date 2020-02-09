@@ -8,10 +8,10 @@ storage: Storage
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.storage](https://galaxy.ansible.com/devops-toolbox.storage)
+[https://galaxy.ansible.com/devopstoolbox.storage](https://galaxy.ansible.com/devopstoolbox.storage)
 
 ```bash
-ansible-galaxy install devops-toolbox.storage
+ansible-galaxy install devopstoolbox.storage
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: storage is configured
       import_role:
-        name: devops-toolbox.storage
+        name: devopstoolbox.storage
       vars:
         storage_packages_state: present
         storage_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
