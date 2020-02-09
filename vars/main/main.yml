@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+storage_repos_create: "{{ _storage_repos_create['all']
+  | union ( _storage_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+storage_repos_download: "{{ _storage_repos_download['all']
+  | union ( _storage_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+storage_templates_copy: "{{ _storage_templates_copy['all']
+  | union ( _storage_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+storage_services_enable: "{{ _storage_services_enable['all']
+  | union ( _storage_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+storage_selinux_enable: "{{ _storage_selinux_enable['all']
+  | union ( _storage_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+storage_packages_remove: "{{ _storage_packages_remove['all']
+  | union ( _storage_packages_remove[my_os]
+  | default([]) ) }}"
+storage_packages_repos: "{{ _storage_packages_repos['all']
+  | union ( _storage_packages_repos[my_os]
+  | default([]) ) }}"
+storage_packages_prereq: "{{ _storage_packages_prereq['all']
+  | union ( _storage_packages_prereq[my_os]
+  | default([]) ) }}"
+storage_packages_install: "{{ _storage_packages_install['all']
+  | union ( _storage_packages_install[my_os]
+  | default([]) ) }}"

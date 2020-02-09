@@ -1,0 +1,27 @@
+---
+# Install storage packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ storage_packages_remove }}"
+    state: absent
+  become: true
+  when: storage_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ storage_packages_repos }}"
+    state: "{{ storage_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ storage_packages_prereq }}"
+    state: "{{ storage_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ storage_packages_install }}"
+    state: "{{ storage_packages_state }}"
+  become: true

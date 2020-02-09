@@ -1,0 +1,10 @@
+---
+# Template configuration files for storage
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ storage_templates_copy }}"
+  when: storage_copy_templates
